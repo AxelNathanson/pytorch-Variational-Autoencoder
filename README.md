@@ -1,1 +1,18 @@
-pytorch-Variational-Autoencoder
+# $\beta$-VAE implemented in Pytorch
+
+In this repo, I have implemented two VAE:s insipered by the $\beta$-VAE [[1]](#1) with both Fully Coneccted Encoder/decoder-components and CNN:s. These networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
+
+### TODO
+- [ ] Hyper Parameter search for the CNN-version.
+- [ ] Documentation
+
+## Fully connected encoder/decoder network
+
+
+## CNN encoder/Decoder network
+
+
+
+## References
+<a id="1">[1]</a> 
+[beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework](https://openreview.net/forum?id=Sy2fzU9gl) 2017.
