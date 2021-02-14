@@ -3,10 +3,11 @@
 In this repo, I have implemented two VAE:s insipered by the β-VAE [[1]](#1). One has a Fully Conected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
 
 ### TODO
-- [ ] Hyper Parameter search for the CNN-version.
-- [ ] Documentation
+- [ ] Optimize hyper-parameters for both networks.
+- [ ] Documentation.
 
 ## Fully connected encoder/decoder network
+
 
 
 ## CNN encoder/Decoder network
