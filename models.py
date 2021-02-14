@@ -72,7 +72,8 @@ class BetaVAE_fc(nn.Module):
 
     def compute_loss(self, x, output, mu, logsigma):
         # First we compare how well we have recreated the image
-        mse_loss = nn.functional.mse_loss(output, x)
+        mse_loss = nn.functional.binary_cross_entropy(output.view(x.shape[0], -1),
+                                               x.view(x.shape[0], -1))
 
         # Then the KL_divergence
         kl_div = torch.mean(-0.5 * torch.sum(1 + logsigma - mu ** 2 - logsigma.exp(), dim=1), dim=0)
