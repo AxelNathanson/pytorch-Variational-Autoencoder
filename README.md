@@ -1,6 +1,6 @@
-# $\beta$-VAE implemented in Pytorch
+# β-VAE implemented in Pytorch
 
-In this repo, I have implemented two VAE:s insipered by the $\beta$-VAE [[1]](#1) with both Fully Coneccted Encoder/decoder-components and CNN:s. These networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
+In this repo, I have implemented two VAE:s insipered by the β-VAE [[1]](#1) with both Fully Coneccted Encoder/decoder-components and CNN:s. These networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
 
 ### TODO
 - [ ] Hyper Parameter search for the CNN-version.
