@@ -1,4 +1,4 @@
-# β-VAE implemented in Pytorch
+# Beta-VAE implemented in Pytorch
 
 In this repo, I have implemented two VAE:s inspired by the β-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
 
