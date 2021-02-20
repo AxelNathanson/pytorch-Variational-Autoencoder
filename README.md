@@ -16,7 +16,14 @@ I have experimented with both: MSE-loss (used in the paper) and binary cross-ent
 ## Fully connected encoder/decoder network
 A model made out of fully connected networks has no problem learning a general representation of each label. However, I does not recreate details well. In general, it recreates each image as a standard representation of the pice of clothing rather than exact recreations. Bellow is a example generated with the Beta=0.1, where the right side are the real images, and the left the reconstructions.
 
-![Alt text](/img/fc_reconstruction.png?raw=true "FC-VAE reconstruction")
+![Alt text](/img/fc_result.png?raw=true "FC-VAE reconstruction")
+
+
+We don't train this kind of model only for the reconstruction, there are better-suited autoencoders for that. The strength here is the ability to now sample from the latent space and create new pieces of clothing. 
+
+The sampling is not as sharp as the reconstruction, but we can see some real clothes.
+
+![Alt text](/img/fc_sample.png?raw=true "FC-VAE reconstruction")
 
 
 
