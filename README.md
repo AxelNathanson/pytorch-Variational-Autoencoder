@@ -19,6 +19,13 @@ A model made out of fully connected networks has no problem learning a general r
 ![Alt text](/img/fc_result.png?raw=true "FC-VAE reconstruction")
 
 
+We don't train this kind of model only for the reconstruction, there are better-suited autoencoders for that. The strength here is the ability to now sample from the latent space and create new pieces of clothing. 
+
+The sampling is not as sharp as the reconstruction, but we can see some real clothes.
+
+![Alt text](/img/fc_sample.png?raw=true "FC-VAE reconstruction")
+
+
 
 ## CNN encoder/Decoder network
 The CNN architecture 
