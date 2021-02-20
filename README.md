@@ -1,6 +1,6 @@
 # Beta-VAE implemented in Pytorch
 
-In this repo, I have implemented two VAE:s inspired by the Beta-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. I have chosen the Fashion-MNIST because it's a relativly simple dataset that I should be able to recreate with a CNN on my won laptop (no GPU) as an exercise.
+In this repo, I have implemented two VAE:s inspired by the Beta-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. I have chosen the Fashion-MNIST because it's a relativly simple dataset that I should be able to recreate with a CNN on my own laptop (no GPU) as an exercise.
 
 The models are avalible in [models](models.py) and the training has been performed in the two notebooks:
 * [FC Training](Fully_Connected_VAE.ipynb)
