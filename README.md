@@ -23,12 +23,15 @@ We don't train this kind of model only for the reconstruction, there are better-
 
 The sampling is not as sharp as the reconstruction, but we can see some real clothes.
 
-![Alt text](/img/fc_sample.png?raw=true "FC-VAE reconstruction")
+![Alt text](/img/fc_samples.png?raw=true "FC-VAE Samples")
 
 
 
 ## CNN encoder/Decoder network
-The CNN architecture 
+![Alt text](/img/cnn_result.png?raw=true "CNN-VAE reconstruction")
+
+
+![Alt text](/img/cnn_samples.png?raw=true "CNN-VAE samples")
 
 
 ## References
