@@ -2,6 +2,10 @@
 
 In this repo, I have implemented two VAE:s inspired by the Beta-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. I have chosen the Fashion-MNIST because it's a relativly simple dataset that I should be able to recreate with a CNN on my won laptop (no GPU) as an exercise.
 
+The models are avalible in [models](models.py) and the training has been performed in the two notebooks:
+* [FC Training](Fully_Connected_VAE.ipynb)
+* [CNN Training](CNN_VAE.ipynb)
+
 Both models have been trained with a 3-dimensional latent space, and a Beta<1. The CNN-model can recreate more details than the fully connected one, even though it only uses 0.05 as many parameters, clearly illustrating the advantage of using CNN:s when working with images. 
 
 Comparing the images samples from the latent space is however not very straight forward, since we do not know how the models represent the dataset. Our samples are drawn from a standard multivariate normal, we don't know if we are sampling in the middle of the model's representation of one particular label, or the middle of all of them. A logic next step is to explore the latent space to be able to create better-looking samples. 
