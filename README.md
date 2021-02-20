@@ -1,16 +1,18 @@
 # Beta-VAE implemented in Pytorch
 
-In this repo, I have implemented two VAE:s inspired by the β-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
+In this repo, I have implemented two VAE:s inspired by the Beta-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
 
-I have experimented with what kind of loss to use: MSE (used in the paper) and binary cross-entropy. Since the images are in black and white, binary cross-entropy has so far shown more promising results in separating the different classes with the fc-network, however, no conclusions can be presented at this stage.
+The Beta-parameter in the title is an added weight to the Kullback Leibler divergence term of the loss-function. The KL-term of the loss increases the more our latent space representation of the data diverges from a Standard multivariate normal distribution. In this project, and for this dataset, I have observed that a lower Beta-term has added more flexibility, leading to more separation in the dataset and a better recreation of the images. However, it is worth noting that I am also using a KL-penalty term, based on the size of the dataset to increase stability during training, so the KL-term is being scaled down always during training.
+
+I have experimented with both: MSE-loss (used in the paper) and binary cross-entropy. Since the images are in black and white, binary cross-entropy has shown more promising results in separating the different classes.
 
 ### TODO
-- [ ] Optimize hyper-parameters for both networks.
-- [ ] Quantify comparisons between binary cross entropy loss vs mse for this specific dataset.
+- [x] Optimize hyper-parameters for CNN networks.
+- [ ] Optimize hyper-parameters for CNN networks.
 - [ ] Documentation.
 
 ## Fully connected encoder/decoder network
-A model made out of fully connected networks has no problem learning a general representation of each label. However, so far it doesn't generalize very well, and rather than recreating the exact instance of a shoe, for example, it recreates a general representation. See the show in the lower-left corner, for example, it recreates a shoe but not in the right direction. 
+A model made out of fully connected networks has no problem learning a general representation of each label. However, I does not recreate details well. In general, it recreates each image as a standard representation of the pice of clothing rather than exact recreations. Bellow is a example generated with the Beta=0.1, where the right side are the real images, and the left the reconstructions.
 
 ![Alt text](/img/fc_reconstruction.png?raw=true "FC-VAE reconstruction")
 
