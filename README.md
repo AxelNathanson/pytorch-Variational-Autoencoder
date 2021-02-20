@@ -8,10 +8,6 @@ The Beta-parameter in the title is an added weight to the Kullback Leibler diver
 
 I have experimented with both: MSE-loss (used in the paper) and binary cross-entropy. Since the images are in black and white, binary cross-entropy has shown more promising results in separating the different classes.
 
-### TODO
-- [x] Optimize hyper-parameters for FC networks.
-- [ ] Optimize hyper-parameters for CNN networks.
-- [ ] Documentation.
 
 ## Fully connected encoder/decoder network
 A model made out of fully connected networks has no problem learning a general representation of each label. However, I does not recreate details well. In general, it recreates each image as a standard representation of the pice of clothing rather than exact recreations. Bellow is a example generated with the Beta=0.1, where the right side are the real images, and the left the reconstructions.
@@ -33,6 +29,11 @@ The sampling is not as sharp as the reconstruction, but we can see some real clo
 
 ![Alt text](/img/cnn_samples.png?raw=true "CNN-VAE samples")
 
+
+### TODO
+- [x] Optimize hyper-parameters for FC networks.
+- [ ] Optimize hyper-parameters for CNN networks.
+- [ ] Documentation.
 
 ## References
 <a id="1">[1]</a> 
