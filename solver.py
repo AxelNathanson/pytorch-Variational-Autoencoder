@@ -3,7 +3,7 @@ import torch
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 
-from models import BetaVAE_fc as BetaVAE
+from models import BetaVAE
 
 torch.set_default_dtype(torch.float)
 
