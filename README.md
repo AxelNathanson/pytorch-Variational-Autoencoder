@@ -13,13 +13,13 @@ Comparing the images samples from the latent space is however not very straight 
 The Beta-parameter in the title is an added weight to the Kullback Leibler divergence term of the loss-function. The KL-term of the loss increases the more our latent space representation of the data diverges from a Standard multivariate normal distribution. In this project, and for this dataset, I have observed that a lower Beta-term has added more flexibility, leading to more separation in the dataset and a better recreation of the images. However, it is worth noting that I am also using a KL-penalty term, based on the size of the dataset to increase stability during training, so the KL-term is being scaled down always during training.
 
 
-I have experimented with both: MSE-loss + Tanh activation (used in the paper) and binary cross-entropy + sigmoid activation. So far, better results have been achieved with binary cross-entropy and sigmoid, but that is probably very problem-specific. 
+I have experimented with both MSE-loss + Tanh activation (used in the paper) and binary cross-entropy + sigmoid activation. So far, better results have been achieved with binary cross-entropy and sigmoid, but that is probably very problem-specific. 
 
 
 ## Fully connected encoder/decoder network
 A model made out of fully connected networks has no problem learning a general representation of each label. However, I does not recreate details well. In general, it recreates each image as a standard representation of the pice of clothing rather than exact recreations. Bellow is a example generated with the Beta=0.1, where the right side are the real images, and the left the reconstructions.
 
-![Alt text](/img/fc_result.png?raw=true "FC-VAE reconstruction")
+![Alt text](/img/fc_results.png?raw=true "FC-VAE reconstruction")
 
 
 We don't train this kind of model only for the reconstruction, there are better-suited autoencoders for that. The strength here is the ability to now sample from the latent space and create new pieces of clothing. 
@@ -30,7 +30,7 @@ The sampling is not as sharp as the reconstruction, but we can at least see some
 
 
 
-## CNN encoder/Decoder network
+## CNN encoder/decoder network
 As expected the CNN-architecture is able to capture more details, especially in the handbags. It is worth noting for example that we get more accurate colours in the recreations. 
 
 ![Alt text](/img/cnn_result.png?raw=true "CNN-VAE reconstruction")
