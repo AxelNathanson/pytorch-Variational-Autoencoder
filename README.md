@@ -7,7 +7,7 @@ The Beta-parameter in the title is an added weight to the Kullback Leibler diver
 I have experimented with both: MSE-loss (used in the paper) and binary cross-entropy. Since the images are in black and white, binary cross-entropy has shown more promising results in separating the different classes.
 
 ### TODO
-- [x] Optimize hyper-parameters for CNN networks.
+- [x] Optimize hyper-parameters for FC networks.
 - [ ] Optimize hyper-parameters for CNN networks.
 - [ ] Documentation.
 
