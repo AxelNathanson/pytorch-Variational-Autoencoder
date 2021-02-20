@@ -37,7 +37,7 @@ As expected the CNN-architecture is able to capture more details, especially in 
 
 When we generate new samples we see more diversity in the samples. More samples don't look like clothes at all, but the ones recreating garments show a bigger diversity. 
 
-![Alt text](/img/cnn_samples_2.png?raw=true "CNN-VAE samples")
+![Alt text](/img/cnn_samples.png?raw=true "CNN-VAE samples")
 
 
 ### TODO
