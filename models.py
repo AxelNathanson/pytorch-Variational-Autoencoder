@@ -23,17 +23,21 @@ class BetaVAE_fc(nn.Module):
         self.encoder = nn.Sequential(
             nn.Linear(self.input_size, 256),
             nn.ReLU(),
-            nn.Linear(256, 512),
+            nn.Linear(256, 256),
             nn.ReLU(),
+            nn.Linear(256, 512),
+            nn.ReLU()
         )
 
         self.linear_mu = nn.Linear(512, self.latent_dim)
         self.linear_logsigma = nn.Linear(512, self.latent_dim)
 
         self.decoder = nn.Sequential(
-            nn.Linear(self.latent_dim, 512),
+            nn.Linear(self.latent_dim, 256),
             nn.ReLU(),
-            nn.Linear(512, self.input_size)
+            nn.Linear(256, 512),
+            nn.ReLU(),
+            nn.Linear(512, self.input_size),
         )
 
         self.activation = torch.sigmoid
@@ -125,7 +129,7 @@ class BetaVAE_cnn(nn.Module):
         self.in_channels = in_channels
         self.image_dim = image_dim
 
-        cnn_channels = [32, 64, 64, 32]
+        cnn_channels = [16, 32, 32, 32]
         self.channels_into_decoder = cnn_channels[2]
 
         # We need two Linear layers to convert encoder -> mu, sigma
@@ -196,7 +200,8 @@ class BetaVAE_cnn(nn.Module):
 
     def compute_loss(self, x, output, mu, logsigma):
         # First we compare how well we have recreated the image
-        mse_loss = nn.functional.mse_loss(output, x)
+        mse_loss = nn.functional.binary_cross_entropy(output.view(x.shape[0], -1),
+                                                      x.view(x.shape[0], -1))
 
         # Then the KL_divergence
         kl_div = torch.mean(-0.5 * torch.sum(1 + logsigma - mu ** 2 - logsigma.exp(), dim=1), dim=0)

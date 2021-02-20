@@ -3,14 +3,13 @@ import torch
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 
-
-from models import BetaVAE_fc
+from models import BetaVAE_fc as BetaVAE
 
 torch.set_default_dtype(torch.float)
 
 
 class Solver(object):
-    def __init__(self, model: BetaVAE_fc, train_set, validation_set=None, test_set=None, **kwargs):
+    def __init__(self, model: BetaVAE, train_set, validation_set=None, test_set=None, **kwargs):
         self.model = model
         self.train_set = train_set
         self.validation_set = validation_set
@@ -138,6 +137,7 @@ class Solver(object):
         test_loader = DataLoader(self.test_set,
                                  batch_size=len(self.test_set),
                                  shuffle=True)
+
         for image, target in test_loader:
             z = self.model.sample_latent_space(image)
 
