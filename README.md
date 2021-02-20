@@ -26,18 +26,18 @@ We don't train this kind of model only for the reconstruction, there are better-
 
 The sampling is not as sharp as the reconstruction, but we can at least see some real clothes.
 
-![Alt text](/img/fc_samples.png?raw=true "FC-VAE Samples")
+![Alt text](/img/fc_samples_2.png?raw=true "FC-VAE Samples")
 
 
 
 ## CNN encoder/decoder network
 As expected the CNN-architecture is able to capture more details, especially in the handbags. It is worth noting for example that we get more accurate colours in the recreations. 
 
-![Alt text](/img/cnn_result.png?raw=true "CNN-VAE reconstruction")
+![Alt text](/img/cnn_results.png?raw=true "CNN-VAE reconstruction")
 
 When we generate new samples we see more diversity in the samples. More samples don't look like clothes at all, but the ones recreating garments show a bigger diversity. 
 
-![Alt text](/img/cnn_samples.png?raw=true "CNN-VAE samples")
+![Alt text](/img/cnn_samples_2.png?raw=true "CNN-VAE samples")
 
 
 ### TODO
