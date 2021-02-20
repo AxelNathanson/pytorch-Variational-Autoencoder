@@ -1,6 +1,8 @@
 # Beta-VAE implemented in Pytorch
 
-In this repo, I have implemented two VAE:s inspired by the Beta-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset.
+In this repo, I have implemented two VAE:s inspired by the Beta-VAE [[1]](#1). One has a Fully Connected Encoder/decoder architecture and the other CNN. The networks have been trained on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. I have chosen the Fashion-MNIST because it's a relativly simple dataset that I should be able to recreate with a CNN on my won laptop (no GPU) as an exercise.
+
+The CNN-model can recreate more details than the fully connected one, even though it only uses 0.05 as many parameters, clearly illustrating the advantage of using CNN:s when working with images.
 
 The Beta-parameter in the title is an added weight to the Kullback Leibler divergence term of the loss-function. The KL-term of the loss increases the more our latent space representation of the data diverges from a Standard multivariate normal distribution. In this project, and for this dataset, I have observed that a lower Beta-term has added more flexibility, leading to more separation in the dataset and a better recreation of the images. However, it is worth noting that I am also using a KL-penalty term, based on the size of the dataset to increase stability during training, so the KL-term is being scaled down always during training.
 
@@ -19,7 +21,7 @@ A model made out of fully connected networks has no problem learning a general r
 
 
 ## CNN encoder/Decoder network
-
+The CNN architecture 
 
 
 ## References
